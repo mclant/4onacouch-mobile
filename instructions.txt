@@ -1,0 +1,5 @@
+need to start metro in a terminal by running 'npx react-native start'
+
+then in new terminal, start project by running 'npx react-native run-ios'
+
+* use xcode simulator
