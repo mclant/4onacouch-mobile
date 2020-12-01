@@ -3,3 +3,11 @@ need to start metro in a terminal by running 'npx react-native start'
 then in new terminal, start project by running 'npx react-native run-ios'
 
 * use xcode simulator
+* node version v14.15.0
+* npm version 
+
+
+react-native-navigation
+-went to '/Users/Matt/Projects/my apps/fourOnACouchMobile/node_modules/react-native-navigation/ReactNativeNavigation.podspec'
+	and changed line 13 to be platform 10.0 instead of 11.0. then cd into 'ios' folder and run 'pod install'
+	then rebuilt app. dunno if running 'npm i' will reset this.. i think it will.

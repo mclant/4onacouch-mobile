@@ -1,76 +1,88 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- * @flow strict-local
- */
-
 import React from 'react';
+import { Navigation } from 'react-native-navigation';
 import {
-  SafeAreaView,
   StyleSheet,
-  ScrollView,
   View,
   Text,
-  StatusBar,
+  Button,
+  TouchableOpacity,
 } from 'react-native';
 
 import {
-  Header,
-  LearnMoreLinks,
   Colors,
-  DebugInstructions,
-  ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
 
-const App: () => React$Node = () => {
+import 'react-native-gesture-handler';
+
+const App = (props) => {
   return (
     <>
-      <StatusBar barStyle="dark-content" />
-      <SafeAreaView>
-        <ScrollView
-          contentInsetAdjustmentBehavior="automatic"
-          style={styles.scrollView}>
-          {global.HermesInternal == null ? null : (
-            <View style={styles.engine}>
-              <Text style={styles.footer}>Engine: Hermes</Text>
-            </View>
-          )}
-          <View style={styles.body}>
-            <View style={styles.sectionContainer}>
-              <Text style={styles.sectionTitle}>Welcome to Four on a Couch</Text>
-              <Text style={styles.sectionDescription}>
-                Enjoy
-              </Text>
-            </View>
-            {/* <LearnMoreLinks /> */}
-          </View>
-        </ScrollView>
-      </SafeAreaView>
+      <View style={styles.body}>
+        <View style={styles.sectionContainer}>
+          <Text style={styles.sectionTitle}>Hone</Text>
+          <Text style={styles.sectionDescription}>
+            Improve your technique
+          </Text>
+          <Button
+            title='Go to Camera'
+            color='#710ce3'
+            onPress={() => Navigation.push(props.componentId, {
+              component: {
+                name: 'CameraScreen',
+                options: {
+                  topBar: {
+                    title: {
+                      text: 'Camera',
+                      color: 'white',
+                    },
+                    background: {
+                      color: 'orange',
+                    }
+                  }
+                }
+              }
+            })}/>
+        </View>
+      </View>
     </>
+
   );
 };
 
+App.options = {
+  topBar: {
+    title: {
+      text: 'Home',
+      color: 'white'
+    },
+    background: {
+      color: 'orange'
+    }
+  }
+}
+
 const styles = StyleSheet.create({
-  scrollView: {
-    backgroundColor: Colors.lighter,
-  },
-  engine: {
-    position: 'absolute',
-    right: 0,
-  },
   body: {
-    backgroundColor: Colors.white,
+    flex: 1,
+    alignItems: 'center',
   },
   sectionContainer: {
+    flex: 1,
     marginTop: 32,
     paddingHorizontal: 24,
+    justifyContent: 'center',
+    alignItems: 'center',
   },
   sectionTitle: {
     fontSize: 24,
     fontWeight: '600',
     color: Colors.black,
+  },
+  button: {
+    alignItems: 'center',
+    backgroundColor: '#DDDDDD',
+    padding: 10,
+    marginBottom: 10
   },
   sectionDescription: {
     marginTop: 8,
