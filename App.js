@@ -33,11 +33,7 @@ const App = (props) => {
                   topBar: {
                     title: {
                       text: 'Camera',
-                      color: 'white',
                     },
-                    background: {
-                      color: 'orange',
-                    }
                   }
                 }
               }
